@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/influentialpublishers/node-http-api/issues"
   },
-  "homepage": "https://github.com/influentialpublishers/node-http-api"
+  "homepage": "https://github.com/influentialpublishers/node-http-api",
+  "dependencies": {
+    "coffee-script": "^1.8.0",
+    "pipeline-queue": "^0.2.2",
+    "request": "^2.48.0"
+  }
 }
