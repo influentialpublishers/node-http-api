@@ -1,0 +1,24 @@
+{
+  "name": "node-http-api",
+  "version": "1.0.0",
+  "description": "A simplified request interface to an HTTP based API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/influentialpublishers/node-http-api.git"
+  },
+  "keywords": [
+    "api",
+    "http",
+    "interface"
+  ],
+  "author": "Nathan A Sculli <nsculli@influentialpublishers.com>",
+  "license": "Copyright",
+  "bugs": {
+    "url": "https://github.com/influentialpublishers/node-http-api/issues"
+  },
+  "homepage": "https://github.com/influentialpublishers/node-http-api"
+}
