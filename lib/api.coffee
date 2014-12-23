@@ -4,7 +4,7 @@ OptionsParser   = require __dirname + '/parser/options'
 
 module.exports  = (config) ->
   agent           = config.agent || request
-  headers         = config.headers
+  headers         = config.headers || {}
   queue           = config.queue || Queue()
   options_parser  = OptionsParser(config)
 
