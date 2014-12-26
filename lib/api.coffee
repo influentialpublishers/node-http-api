@@ -19,7 +19,6 @@ module.exports  = (config) ->
       is_body_string    = typeof body is 'string'
       
       if is_json_response and is_body_string
-        console.log("PARSING BODY")
         try
           body    = JSON.parse body
         catch parse_err
