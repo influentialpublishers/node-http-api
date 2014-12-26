@@ -1,6 +1,6 @@
 {
   "name": "node-http-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simplified request interface to an HTTP based API",
   "main": "index.js",
   "scripts": {
