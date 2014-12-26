@@ -2,6 +2,11 @@ request         = require 'request'
 Queue           = require 'pipeline-queue'
 OptionsParser   = require __dirname + '/parser/options'
 
+isJson          = (res) ->
+  content_type  = res.headers['content-type']
+  
+  return /json/.test(content_type)
+
 module.exports  = (config) ->
   agent           = config.agent || request
   headers         = config.headers || {}
@@ -10,19 +15,23 @@ module.exports  = (config) ->
 
   handler = (done) ->
     return (err, httpResponse, body) ->
+      is_json_response  = /json/.test httpResponse.headers['content-type']
+      is_body_string    = typeof body is 'string'
+      
+      if is_json_response and is_body_string
+        console.log("PARSING BODY")
+        try
+          body    = JSON.parse body
+        catch parse_err
+          err     = parse_err
+            
       if not err
         status = httpResponse.statusCode
         if status isnt 200
           err =
             message: body or httpResponse.body or httpResponse.text
             code: status
-
-        else if typeof body is 'string'
-          try
-            body    = JSON.parse body
-          catch parse_err
-            err     = parse_err
-
+            
       return done err, httpResponse, body
 
 
