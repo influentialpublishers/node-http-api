@@ -1,7 +1,7 @@
 API     = require __dirname + '/api'
 Queue   = require 'pipeline-queue'
 
-DEFAULT_CACHE_CLEAR_INTERVAL    = 30 * 10000 # default to thirty seconds.
+DEFAULT_CACHE_CLEAR_INTERVAL    = 30 * 1000 # default to thirty seconds.
 
 module.exports  = (config) ->
     config.queue    = config.queue || Queue()
