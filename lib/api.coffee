@@ -48,7 +48,7 @@ module.exports  = (config) ->
 
       if method is 'GET'
         task        = call.bind call, options
-        key_text    = JSON.stringify [ method, path ]
+        key_text    = JSON.stringify options
         key         = new Buffer(key_text).toString 'base64'
 
         return queue.run key, task, done or params
